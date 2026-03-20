@@ -14,6 +14,8 @@ import m_create from "../assets/images/solariver/m_create.png";
 import m_module from "../assets/images/solariver/m_module.png";
 
 
+
+
 export const careerProjects = [
   {
     title: "솔라리버 태양광 모니터링 Web",

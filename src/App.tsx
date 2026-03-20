@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { Home } from "./components/sections/Home";
 import { About } from "./components/sections/About";
-import { Project } from "./components/sections/Project";
+import { ToyProjects } from "./components/sections/ToyProjects";
 import { Skill } from "./components/sections/Skill";
 import { Contact } from "./components/sections/Contact";
 import Navbar from "./components/layout/Nav";
@@ -36,7 +36,7 @@ const App = () => {
   }
 
   return (
-    <>
+     <div className="font-sans bg-gradient-to-br from-blue-50 via-purple-50 to-blue-100 text-gray-800">
       {/* Header */}
       <header className="w-full bg-white border-b sticky top-0 z-50">
         <div className="max-w-screen-lg mx-auto px-4 h-16 flex items-center">
@@ -64,7 +64,7 @@ const App = () => {
         {/* Project */}
         <section  ref={project}  className="w-full bg-gradient-to-b from-white to-gray-50">
           <div className="max-w-screen-lg mx-auto px-4 py-24">
-            <Project />
+            <ToyProjects />
           </div>
         </section>
 
@@ -88,7 +88,7 @@ const App = () => {
           <Footer />
         </div>
       </footer>
-    </>
+    </div>
   )
 }
 
