@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { Home } from "./components/sections/Home";
 import { About } from "./components/sections/About";
-import { ToyProjects } from "./components/sections/ToyProjects";
+import { ToyProject } from "./components/sections/ToyProject";
 import { Skill } from "./components/sections/Skill";
 import { Contact } from "./components/sections/Contact";
 import Navbar from "./components/layout/Nav";
@@ -38,7 +38,7 @@ const App = () => {
   return (
      <div className="font-sans bg-gradient-to-br from-blue-50 via-purple-50 to-blue-100 text-gray-800">
       {/* Header */}
-      <header className="w-full bg-white border-b sticky top-0 z-50">
+      <header className="w-full bg-white sticky top-0 z-50">
         <div className="max-w-screen-lg mx-auto px-4 h-16 flex items-center">
           <Navbar handlerSection={handlerSection} />
         </div>
@@ -61,34 +61,31 @@ const App = () => {
           </div>
         </section>
 
-        {/* Project */}
-        <section  ref={project}  className="w-full bg-gradient-to-b from-white to-gray-50">
-          <div className="max-w-screen-lg mx-auto px-4 py-24">
-            <ToyProjects />
+        {/* ToyProject */}
+        <section  className="max-w-screen-lg mx-auto px-4 py-16">
+            <div>
+            <ToyProject />
           </div>
         </section>
 
         {/* Skill */}
         <section ref={skill} className="w-full bg-white">
-          <div className="max-w-screen-lg mx-auto px-4 py-24">
+          <div className="max-w-screen-lg mx-auto px-4 py-16">
             <Skill />
           </div>
         </section>
 
         {/* Contact */}
         <section ref={contact} className="w-full bg-gray-50">
-          <div className="max-w-screen-lg mx-auto px-4 py-24">
+          <div className="max-w-screen-lg mx-auto px-4 py-16">
             <Contact />
           </div>
         </section>
       </main>
 
-      <footer className="w-full bg-gray-900 text-gray-200">
-        <div className="max-w-screen-lg mx-auto px-4 py-16">
-          <Footer />
-        </div>
-      </footer>
+      <Footer />
     </div>
+
   )
 }
 

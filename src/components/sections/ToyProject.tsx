@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import  FanCard  from "../ui/FanCard"
+import FanCard from "../ui/FanCard"
 import { toyProjects } from "../../data/toyProject";
+import { LinkButton} from "../ui/LinkButton";
 
 const Tag = ({ label }: { label: string }) => (
   <span className="flex items-center gap-1 px-3 py-1 text-xs rounded-full bg-white shadow-sm">
@@ -10,7 +11,12 @@ const Tag = ({ label }: { label: string }) => (
 );
 
 
-export const ToyProjects = () => {
+export const ToyProject = () => {
+
+  const buttonBase =
+    "flex items-center gap-1 text-sm px-4 py-2 rounded-lg transition-all duration-200 hover:-translate-y-0.5";
+
+
   return (
     <section className="py-24 px-6 bg-white/60">
       <h2 className="text-3xl font-semibold text-center mb-12">Toy Projects</h2>
@@ -66,22 +72,22 @@ export const ToyProjects = () => {
             </div>
 
             {/* 링크 */}
-            <div className="flex gap-4 mt-6">
-              {proj.links.github && (
+            <div className="flex gap-3 mt-6">
+              {proj.links?.github && (
                 <a
                   href={proj.links.github}
                   target="_blank"
-                  className="text-sm px-4 py-2 rounded-lg bg-gray-100 hover:bg-gray-200"
+                  className={`${buttonBase} bg-gray-100 hover:bg-gray-900 hover:text-white`}
                 >
                   GitHub
                 </a>
               )}
 
-              {proj.links.demo && (
+              {proj.links?.demo && (
                 <a
                   href={proj.links.demo}
                   target="_blank"
-                  className="text-sm px-4 py-2 rounded-lg bg-blue-100 hover:bg-blue-200"
+                  className={`${buttonBase} bg-blue-100 text-blue-700 hover:bg-blue-600 hover:text-white`}
                 >
                   Demo
                 </a>
