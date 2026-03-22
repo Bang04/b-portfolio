@@ -62,8 +62,8 @@ const App = () => {
         </section>
 
         {/* ToyProject */}
-        <section  className="max-w-screen-lg mx-auto px-4 py-16">
-            <div>
+        <section ref={project}  className="max-w-screen-lg mx-auto px-4 py-16">
+            <div className="max-w-screen-lg mx-auto px-4 py-24">
             <ToyProject />
           </div>
         </section>
