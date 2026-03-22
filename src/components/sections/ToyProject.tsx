@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import FanCard from "../ui/FanCard"
 import { toyProjects } from "../../data/toyProject";
-import { LinkButton} from "../ui/LinkButton";
 
 const Tag = ({ label }: { label: string }) => (
   <span className="flex items-center gap-1 px-3 py-1 text-xs rounded-full bg-white shadow-sm">

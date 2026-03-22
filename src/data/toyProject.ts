@@ -143,14 +143,6 @@ import crowdApp from "../assets/images/project/Crowdfunding-app.png";
 import sunnysWeb from "../assets/images/project/Sunnyside-web.png";
 // import persnerApp from "../assets/images/project/PersonalFinance-app.png";
 // import persnerTablet from "../assets/images/project/PersonalFinance-tablet.png";
-import persnerWeb from "../assets/images/project/PersonalFinance-web.png";
-
 import potWeb from "../assets/images/project/personal/pot-web.png";
-import potTablet from "../assets/images/project/personal/pot-web.png";
-import add from "../assets/images/project/personal/pot-add.png";
-import del from "../assets/images/project/personal/pot-del.png";
-import edit from "../assets/images/project/personal/pot-edit.png";
-
-import RecurringWeb from "../assets/images/project/personal/recurring-web.png";
 import RecurringTablet from "../assets/images/project/personal/recurring-tablet.png";
 import RecurringApp from "../assets/images/project/personal/recurring-app.png";
