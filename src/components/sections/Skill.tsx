@@ -8,9 +8,9 @@ export const Skill = () => {
     const isInView = useInView(ref, { once: true, margin: "-50px" });
 
     return (
-        <div className="flex flex-col items-center min-h-100  py-16">
-            <div className="w-4/5 mx-auto p-3 text-lg text-left font-bold">🛠️ Skills</div>
-            <div ref={ref} className="flex flex-col md:flex-row  justify-between w-full rounded-xl shadow-lg bg-white max-w-4/5">
+        <>
+            <h2 className="text-3xl font-semibold text-center mb-12">🛠️ Skills</h2>
+            <div ref={ref} className="max-w-4xl mx-auto bg-white/70 backdrop-blur-md rounded-2xl shadow-lg p-8 border border-white/40">
                 <div className="p-4">
                     {
                         skills.map((category, i) => (
@@ -25,10 +25,10 @@ export const Skill = () => {
                             >
                                 <div className="font-semibold ">{category.title}</div>
                                 {category.groups.map((groups) => (
-                                     <div className="flex ml-4 border-l border-gray-200 pl-3">
+                                        <div className="flex ml-4 border-l border-gray-200 pl-3">
                                         {groups.label && (
                                             <div className="flex hidden md:flex">
-                                                 <span className="inline-flex items-center px-3 py-1  text-sm font-medium text-gray-700 ">
+                                                    <span className="inline-flex items-center px-3 py-1  text-sm font-medium text-gray-700 ">
                                                     {groups.label}
                                                 </span>
                                             </div>
@@ -37,7 +37,7 @@ export const Skill = () => {
                                             {groups.items.map((itme) => (
                                                 <SkillTag name={itme} />
                                             ))}
-                                         </div>
+                                            </div>
                                     </div>
                                 ))}
                             </motion.div>
@@ -45,6 +45,6 @@ export const Skill = () => {
                     }
                 </div>
             </div>
-        </div>
+        </>
     );
 };

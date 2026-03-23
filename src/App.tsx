@@ -48,35 +48,35 @@ const App = () => {
       <main className="w-full">
 
         {/* Home */}
-        <section className="w-full bg-white">
+        <section className="w-full bg-gradient-to-br from-purple-100 via-pink-50 to-indigo-100">
           <div className="max-w-screen-lg mx-auto px-4 py-24">
             <Home />
           </div>
         </section>
 
         {/* About */}
-        <section  ref={about}  className="w-full bg-gray-50">
+        <section  ref={about}  className="w-full bg-gradient-to-br from-purple-100 via-pink-50 to-indigo-100">
           <div className="max-w-screen-lg mx-auto px-4 py-24">
             <About />
           </div>
         </section>
 
         {/* ToyProject */}
-        <section ref={project}  className="max-w-screen-lg mx-auto px-4 py-16">
+        <section ref={project}  className="max-w-screen-lg mx-auto px-4 py-16 ">
             <div className="max-w-screen-lg mx-auto px-4 py-24">
             <ToyProject />
           </div>
         </section>
 
         {/* Skill */}
-        <section ref={skill} className="w-full bg-white">
+        <section ref={skill} className="w-full bg-gradient-to-br from-purple-100 via-pink-50 to-indigo-100">
           <div className="max-w-screen-lg mx-auto px-4 py-16">
             <Skill />
           </div>
         </section>
 
         {/* Contact */}
-        <section ref={contact} className="w-full bg-gray-50">
+        <section ref={contact} className="w-full bg-gradient-to-br from-purple-100 via-pink-50 to-indigo-100">
           <div className="max-w-screen-lg mx-auto px-4 py-16">
             <Contact />
           </div>

@@ -80,10 +80,9 @@ export const Contact = () => {
 }, [status]);
 
   return (
-    <section className="py-24 px-6">
-      <h2 className="text-3xl font-semibold text-center mb-12">Contact</h2>
-
-      <div className="max-w-3xl mx-auto bg-white/70 backdrop-blur-md rounded-2xl shadow-lg p-8 border border-white/40">
+    <>
+      <h2 className="text-3xl font-semibold text-center mb-12">📧 Contact</h2>
+      <div className="max-w-4xl mx-auto bg-white/70 backdrop-blur-md rounded-2xl shadow-lg p-8 border border-white/40">
         <form ref={form} onSubmit={sendEmail} className="space-y-4">
 
           <div className="grid md:grid-cols-2 gap-4">
@@ -145,6 +144,6 @@ export const Contact = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </section>
+    </>
   );
 };

@@ -12,10 +12,9 @@ export const About = () => {
     const [activeCompany, setActiveCompany] = useState<number | null>(null);
 
     return (
-        <section className="w-full py-24 px-6">
-        <h2 className="text-3xl font-semibold text-center mb-12">💼 Career</h2>
-
-        <div className="max-w-5xl mx-auto space-y-8">
+      <>
+        <h2 className="text-3xl font-semibold text-center mb-12">👨🏻‍💻 About</h2>
+        <div className="max-w-4xl mx-auto bg-white/70 backdrop-blur-md rounded-2xl shadow-lg p-8 border border-white/40">
           {careerData.map((item) => (
             <div key={item.id}>
              <div
@@ -116,7 +115,7 @@ export const About = () => {
             </div>
           ))}
         </div>
-      </section>
+      </>
     )
 }
 

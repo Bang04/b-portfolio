@@ -12,89 +12,90 @@ const Tag = ({ label }: { label: string }) => (
 
 export const ToyProject = () => {
 
-  const buttonBase =
-    "flex items-center gap-1 text-sm px-4 py-2 rounded-lg transition-all duration-200 hover:-translate-y-0.5";
+  const buttonBase = "flex items-center gap-1 text-sm px-4 py-2 rounded-lg transition-all duration-200 hover:-translate-y-0.5";
 
 
   return (
-    <section className="py-24 px-6 bg-white/60">
-      <h2 className="text-3xl font-semibold text-center mb-12">Toy Projects</h2>
+    <>
+      <h2 className="text-3xl font-semibold text-center mb-12">🚀 Toy Projects</h2>
+      <div className=" max-w-4xl mx-auto rounded-2xl">
+       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {toyProjects.map((proj) => (
+              <motion.div
+                key={proj.id}
+                whileHover={{ y: -5 }}
+                className="bg-white p-6 rounded-2xl shadow-md transition"
+              >
 
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
-        {toyProjects.map((proj) => (
-          <motion.div
-            key={proj.id}
-            whileHover={{ y: -5 }}
-            className="bg-white p-6 rounded-2xl shadow-md transition"
-          >
+                {/* 부채꼴 이미지 */}
+                <FanCard images={proj.images} />
 
-            {/* 부채꼴 이미지 */}
-            <FanCard images={proj.images} />
+                {/* 헤더 */}
+                <div className="flex items-center gap-2 mb-2">
+                  <span>{proj.type === "team" ? "👥" : "👤"}</span>
+                  <h3 className="font-semibold text-xl">{proj.title}</h3>
+                </div>
 
-            {/* 헤더 */}
-            <div className="flex items-center gap-2 mb-2">
-              <span>{proj.type === "team" ? "👥" : "👤"}</span>
-              <h3 className="font-semibold text-xl">{proj.title}</h3>
-            </div>
+                <p className="text-sm text-gray-500">{proj.period}</p>
 
-            <p className="text-sm text-gray-500">{proj.period}</p>
+                {/* 설명 */}
+                <p className="mt-3 text-sm">{proj.desc}</p>
+                <p className="mt-2 text-sm text-gray-600">기능: {proj.features}</p>
 
-            {/* 설명 */}
-            <p className="mt-3 text-sm">{proj.desc}</p>
-            <p className="mt-2 text-sm text-gray-600">기능: {proj.features}</p>
+                {/* 역할 */}
+                <div className="mt-4">
+                  <p className="font-medium text-sm mb-1">담당 역할</p>
+                  <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
+                    {proj.role.map((r, i) => (
+                      <li key={i}>{r}</li>
+                    ))}
+                  </ul>
+                </div>
 
-            {/* 역할 */}
-            <div className="mt-4">
-              <p className="font-medium text-sm mb-1">담당 역할</p>
-              <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
-                {proj.role.map((r, i) => (
-                  <li key={i}>{r}</li>
-                ))}
-              </ul>
-            </div>
+                {/* 성과 */}
+                <div className="mt-4">
+                  <p className="font-medium text-sm mb-1">성과</p>
+                  <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
+                    {proj.result.map((r, i) => (
+                      <li key={i}>{r}</li>
+                    ))}
+                  </ul>
+                </div>
 
-            {/* 성과 */}
-            <div className="mt-4">
-              <p className="font-medium text-sm mb-1">성과</p>
-              <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
-                {proj.result.map((r, i) => (
-                  <li key={i}>{r}</li>
-                ))}
-              </ul>
-            </div>
+                {/* 기술 태그 */}
+                <div className="flex flex-wrap gap-2 mt-4">
+                  {proj.tags.map((tag, i) => (
+                    <Tag key={i} label={tag} />
+                  ))}
+                </div>
 
-            {/* 기술 태그 */}
-            <div className="flex flex-wrap gap-2 mt-4">
-              {proj.tags.map((tag, i) => (
-                <Tag key={i} label={tag} />
-              ))}
-            </div>
+                {/* 링크 */}
+                <div className="flex gap-3 mt-6">
+                  {proj.links?.github && (
+                    <a
+                      href={proj.links.github}
+                      target="_blank"
+                      className={`${buttonBase} bg-gray-100 hover:bg-gray-900 hover:text-white`}
+                    >
+                      GitHub
+                    </a>
+                  )}
 
-            {/* 링크 */}
-            <div className="flex gap-3 mt-6">
-              {proj.links?.github && (
-                <a
-                  href={proj.links.github}
-                  target="_blank"
-                  className={`${buttonBase} bg-gray-100 hover:bg-gray-900 hover:text-white`}
-                >
-                  GitHub
-                </a>
-              )}
-
-              {proj.links?.demo && (
-                <a
-                  href={proj.links.demo}
-                  target="_blank"
-                  className={`${buttonBase} bg-blue-100 text-blue-700 hover:bg-blue-600 hover:text-white`}
-                >
-                  Demo
-                </a>
-              )}
-            </div>
-          </motion.div>
-        ))}
+                  {proj.links?.demo && (
+                    <a
+                      href={proj.links.demo}
+                      target="_blank"
+                      className={`${buttonBase} bg-blue-100 text-blue-700 hover:bg-blue-600 hover:text-white`}
+                    >
+                      Demo
+                    </a>
+                  )}
+                </div>
+              </motion.div>
+            ))}
+        </div>
+     
       </div>
-    </section>
+    </>
   );
 };
