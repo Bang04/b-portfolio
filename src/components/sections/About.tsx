@@ -74,8 +74,7 @@ export const About = () => {
                           // 이미지 없을 때
                            <div className="mb-4">
                             <div className="w-full h-48 rounded-xl overflow-hidden bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
-                              <div className="absolute inset-0 opacity-60 bg-gradient-to-tr from-purple-200 via-blue-100 to-purple-100" />
-                              <span className="relative text-xs text-gray-400">No Image</span>
+                              <span className="relative z-10 text-xs text-gray-400">No Image</span>
                             </div>
                           </div>
                         )}
